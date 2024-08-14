@@ -10,16 +10,22 @@ const int mod = 1e9+7;
 using namespace std;
 
 
-vi bublle_sort(vi &arr, int &n){
-    for(int i=0;i<n-1;i++){
-        for(int j=0;j<n-1;j++){
-            if(arr[j] > arr[j+1]){
-                swap(arr[j],arr[j+1]);
-            }
-        }
+vi merge_sort(vi &arr){
+
+    int n = arr.size();
+    if(arr.size() == 1){
+        return arr;
     }
-    return arr;
+    int mid = n/2;
+    vi lef(mid),right(n-mid);
+    
+
+
+
+
 }
+
+
 
 signed main() {
     USM;
@@ -27,14 +33,12 @@ signed main() {
     int n;cin>>n;
     vi arr(n);
     forn{
-        cin>> arr[i];
+        
     }
 
-    bublle_sort(arr,n);
-    
-    forn{
-        cout << arr[i] << " ";
-    }
+
+
+
 
     return 0;
 }

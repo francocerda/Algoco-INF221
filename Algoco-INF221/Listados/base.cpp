@@ -13,8 +13,12 @@ signed main() {
     USM;
 
     int n;cin>>n;
+    vi arr(n);
     forn{
-        
+        cin >> arr[i];
     }
+    
+    
+    
     return 0;
 }
