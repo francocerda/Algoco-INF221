@@ -50,7 +50,6 @@ vi merge_sort(vi &arr) {
 }
 
 signed main() {
-    USM;
 
     int n;
     cin >> n;

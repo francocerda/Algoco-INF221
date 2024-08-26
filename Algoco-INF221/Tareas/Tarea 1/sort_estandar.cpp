@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #define int long long 
 #define vi vector<int>
+#define vii vector<vector<int>>
 #define pii pair<int,int>
 #define forn for(int i=0;i<n;i++)
 #define USM ios::sync_with_stdio(0); cin.tie(0);
@@ -9,36 +10,17 @@ const int mod = 1e9+7;
 
 using namespace std;
 
-int ordenar(vi &arr, int inicio, int final){
-
-    int pivot = arr[final];
-    for(int i=0;i<final-1;i++){
-        if(arr[i]<pivot){
-            swap(arr[i], arr[pivot]);
-
-        }
-
-
-    }
-
-
-}
-
-void quick_sort(){
-
-}
-
 signed main() {
-
+    
     int n;cin>>n;
     vi arr(n);
     forn{
         cin >> arr[i];
     }
-
-    quick_sort();
-
-   
+    sort(arr.begin(),arr.end());
+    forn{
+        cout << arr[i] << " ";
+    }
     
     return 0;
 }

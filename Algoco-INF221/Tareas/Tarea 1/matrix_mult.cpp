@@ -27,7 +27,7 @@ vii result_matrix(vii matrix_1,vii matrix_2, int fila_1 ,int columna_1,int fila_
 }
 
 signed main() {
-    USM;
+    
 
     int fila_1;cin>>fila_1;
     int columna_1;cin>>columna_1;
