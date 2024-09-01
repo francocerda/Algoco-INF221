@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <chrono> // Incluimos la biblioteca chrono
+#include <iomanip> // Necesario para std::setprecision
 #define int long long 
 #define vi vector<int>
 #define pii pair<int,int>
@@ -33,7 +35,7 @@ vi merge(vi &left, vi &right) {
     return resultado;
 }
 
-// Función recursiva para dividir 
+// Funcion recursiva para dividir 
 vi dividir(vi &arr, int inicio, int final) {
     if(inicio == final) {
         return vi(1, arr[inicio]);
@@ -44,12 +46,13 @@ vi dividir(vi &arr, int inicio, int final) {
     return merge(left, right);
 }
 
-// Función principal de merge_sort
+// Funcion merge_sort
 vi merge_sort(vi &arr) {
     return dividir(arr, 0, arr.size() - 1);
 }
 
 signed main() {
+    USM;
 
     int n;
     cin >> n;
@@ -57,10 +60,27 @@ signed main() {
     forn {
         cin >> arr[i];
     }
+
+    // Capturamos el tiempo antes de la ejecucion del algoritmo
+    auto start = chrono::high_resolution_clock::now();
+
+    // Ejecucion del algoritmo
     vi vi_ordenado = merge_sort(arr);
+
+    // Capturamos el tiempo despues de la ejecucion del algoritmo
+    auto end = chrono::high_resolution_clock::now();
+
+    // Calculamos la duracion de la ejecucion en microsegundos
+    chrono::duration<double, std::micro> duration = end - start;
+
+    // Imprimimos el tiempo de ejecucion en microsegundos
+    cout << fixed << setprecision(3);
+    cout << "Tiempo de ejecucion: " << duration.count() << " microsegundos" << endl;
+
     forn {
         cout << vi_ordenado[i] << " ";
     }
+    cout << endl;
 
     return 0;
 }

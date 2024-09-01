@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <chrono> // Incluimos la biblioteca chrono
+#include <iomanip> // Necesario para std::setprecision
 #define int long long 
 #define vi vector<int>
 #define pii pair<int,int>
@@ -8,8 +10,6 @@
 const int mod = 1e9+7;
 
 using namespace std;
-
-//!Fuente: Chat GPT
 
 typedef vector<vector<int>> Matrix;
 
@@ -95,29 +95,39 @@ signed main() {
     USM;
 
     int n;
-    cout << "Ingrese el tamano de las matrices (potencia de 2): ";
     cin >> n;
 
     Matrix A(n, vector<int>(n));
     Matrix B(n, vector<int>(n));
 
-    cout << "Ingrese los elementos de la primera matriz:" << endl;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             cin >> A[i][j];
         }
     }
 
-    cout << "Ingrese los elementos de la segunda matriz:" << endl;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             cin >> B[i][j];
         }
     }
 
+    // Capturamos el tiempo antes de la ejecucion del algoritmo
+    auto start = chrono::high_resolution_clock::now();
+
+    // Ejecucion del algoritmo de Strassen
     Matrix C = strassen(A, B, n);
 
-    cout << "El resultado de la multiplicacion de matrices es:" << endl;
+    // Capturamos el tiempo despues de la ejecucion del algoritmo
+    auto end = chrono::high_resolution_clock::now();
+
+    // Calculamos la duracion de la ejecucion en microsegundos
+    chrono::duration<double, std::micro> duration = end - start;
+
+    // Imprimimos el tiempo de ejecucion en microsegundos
+    cout << fixed << setprecision(3);
+    cout << "Tiempo de ejecucion: " << duration.count() << " microsegundos" << endl;
+
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             cout << C[i][j] << " ";
