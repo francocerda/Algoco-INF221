@@ -10,20 +10,30 @@ const int mod = 1e9+7;
 
 using namespace std;
 
+
 signed main() {
     USM;
 
     int n;cin>>n;
-    int suma;
+    int contador;
     for(int i=0;i<n;i++){
         int k;cin>>k;
         vi arr(20);
-        suma = 0;
+        contador=0;
         for(int j=0;j<20;j++){
             cin>>arr[j];
             
         }
-        cout << k << " " << suma << endl;
+        vi arr2(20);
+        for(int j=0;j<20;j++){
+            auto it = lower_bound(arr2.begin(),arr2.end(),arr[j]);
+            int distancia = arr2.end() - it;
+            contador += distancia;
+            arr2.insert(it,arr[j]);
+            
+        }
+        cout << k << " " << contador << endl;
+        
     }
 
     return 0;

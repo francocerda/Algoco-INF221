@@ -13,10 +13,24 @@ using namespace std;
 signed main() {
     USM;
 
-    int n;cin>>n;
-    vi arr(n);
-    forn{
-        cin >> arr[i];
+    bool flag = true;
+    while(flag){
+        int n;cin>>n;
+        if(n==0) break;
+        vector<string> arr(n);
+        forn{
+            cin >> arr[i];
+        }
+        stable_sort(arr.begin(), arr.end(), [](const string &a, const string &b) {
+            return a.substr(0, 2) < b.substr(0, 2);
+        });
+
+        forn{
+            cout << arr[i] << endl;
+        }
+        cout << endl;   
+    
+    
     }
     
     

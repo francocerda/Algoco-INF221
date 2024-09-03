@@ -14,12 +14,32 @@ signed main() {
     USM;
 
     int n;cin>>n;
-    vi arr(n);
-    forn{
-        cin >> arr[i];
+    set<int> arr_A,arr_B;
+    for(int i=0;i<n;i++){
+        int a,b;cin>> a>>b;
+        arr_A.insert(a);arr_B.insert(b);
+        auto A_inicio = arr_A.begin();
+        auto B_inicio = arr_B.begin();
+        auto A_fin = arr_A.end();
+        auto B_fin = arr_B.end();
+        if(*(A_fin--) <= *(B_fin--)){
+            if(*A_inicio >= *B_inicio){
+                cout << *A_inicio+*(B_fin--) << endl;
+                
+                
+            }
+            else{
+                cout << *B_inicio+*(A_fin--) << endl;
+            
+            }
+        }
+        else{
+
+            cout << *(B_fin--) + *A_inicio << endl;
+
+        }
     }
-    
-    
+        
     
     return 0;
 }
