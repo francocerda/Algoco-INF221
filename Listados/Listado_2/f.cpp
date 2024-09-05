@@ -13,12 +13,10 @@ using namespace std;
 signed main() {
     USM;
 
-    int n;cin>>n;
-    vi arr(n);
-    forn{
-        cin >> arr[i];
-    }
+    int n,h;cin>>n>>h;
     
+    
+
     
     
     return 0;
