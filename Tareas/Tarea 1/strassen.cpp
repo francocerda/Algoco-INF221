@@ -4,6 +4,7 @@
 #define int long long 
 #define vi vector<int>
 #define pii pair<int,int>
+#define vii vector<vector<int>>
 #define forn for(int i=0;i<n;i++)
 #define USM ios::sync_with_stdio(0); cin.tie(0);
 #define endl '\n'
@@ -11,129 +12,95 @@ const int mod = 1e9+7;
 
 using namespace std;
 
-typedef vector<vector<int>> Matrix;
-
-// Function to add matrices
-Matrix add(const Matrix &A, const Matrix &B, int size) {
-    Matrix C(size, vector<int>(size));
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            C[i][j] = A[i][j] + B[i][j];
-        }
-    }
-    return C;
+void sumar(vii& result, const vii& X, const vii& Y) {
+    int n = X.size();
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            result[i][j] = X[i][j] + Y[i][j];
 }
 
-// Function to subtract matrices
-Matrix subtract(const Matrix &A, const Matrix &B, int size) {
-    Matrix C(size, vector<int>(size));
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            C[i][j] = A[i][j] - B[i][j];
-        }
-    }
-    return C;
+void restar(vii& result, const vii& X, const vii& Y) {
+    int n = X.size();
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            result[i][j] = X[i][j] - Y[i][j];
 }
 
-// Strassen's Algorithm
-Matrix strassen(const Matrix &A, const Matrix &B, int size) {
-    if (size == 1) {
-        Matrix C(1, vector<int>(1));
-        C[0][0] = A[0][0] * B[0][0];
-        return C;
+vii strassen(vii &X, vii &Y) {
+    int n = X.size();
+    if (n <= 64) { // Base case size, adjust based on profiling
+        vii Z(n, vector<int>(n, 0));
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                for (int k = 0; k < n; k++)
+                    Z[i][j] += X[i][k] * Y[k][j];
+        return Z;
     }
 
-    int newSize = size / 2;
-    Matrix A11(newSize, vector<int>(newSize));
-    Matrix A12(newSize, vector<int>(newSize));
-    Matrix A21(newSize, vector<int>(newSize));
-    Matrix A22(newSize, vector<int>(newSize));
-    Matrix B11(newSize, vector<int>(newSize));
-    Matrix B12(newSize, vector<int>(newSize));
-    Matrix B21(newSize, vector<int>(newSize));
-    Matrix B22(newSize, vector<int>(newSize));
+    int k = n / 2;
+    vii A(k, vector<int>(k)), B(k, vector<int>(k)), C(k, vector<int>(k)), D(k, vector<int>(k)),
+                        E(k, vector<int>(k)), F(k, vector<int>(k)), G(k, vector<int>(k)), H(k, vector<int>(k));
 
-    // Divide matrices A and B into submatrices
-    for (int i = 0; i < newSize; i++) {
-        for (int j = 0; j < newSize; j++) {
-            A11[i][j] = A[i][j];
-            A12[i][j] = A[i][j + newSize];
-            A21[i][j] = A[i + newSize][j];
-            A22[i][j] = A[i + newSize][j + newSize];
-            B11[i][j] = B[i][j];
-            B12[i][j] = B[i][j + newSize];
-            B21[i][j] = B[i + newSize][j];
-            B22[i][j] = B[i + newSize][j + newSize];
+    vii Z11(k, vector<int>(k)), Z12(k, vector<int>(k)), Z21(k, vector<int>(k)), Z22(k, vector<int>(k)),
+                        temp1(k, vector<int>(k)), temp2(k, vector<int>(k));
+
+    for (int i = 0; i < k; i++)
+        for (int j = 0; j < k; j++) {
+            int index_i_k = i + k;
+            int index_j_k = j + k;
+            A[i][j] = X[i][j];
+            B[i][j] = X[i][index_j_k];
+            C[i][j] = X[index_i_k][j];
+            D[i][j] = X[index_i_k][index_j_k];
+
+            E[i][j] = Y[i][j];
+            F[i][j] = Y[i][index_j_k];
+            G[i][j] = Y[index_i_k][j];
+            H[i][j] = Y[index_i_k][index_j_k];
+        }
+
+    restar(temp1, F, H); // F-H
+    vii P1 = strassen(A, temp1); // P1 = A(F-H)
+
+    sumar(temp1, A, B); // A+B
+    vii P2 = strassen(temp1, H); // P2 = (A+B)H
+
+    sumar(temp1, C, D); // C+D
+    vii P3 = strassen(temp1, E); // P3 = (C+D)E
+
+    restar(temp1, G, E); // G-E
+    vii P4 = strassen(D, temp1); // P4 = D(G-E)
+
+    sumar(temp1, A, D); // A+D
+    sumar(temp2, E, H); // E+H
+    vii P5 = strassen(temp1, temp2); // P5 = (A+D)(E+H)
+
+    restar(temp1, B, D); // B-D
+    sumar(temp2, G, H);  // G+H
+    vii P6 = strassen(temp1, temp2); // P6 = (B-D)(G+H)
+
+    restar(temp1, A, C); // A-C
+    sumar(temp2, E, F);  // E+F
+    vii P7 = strassen(temp1, temp2); // P7 = (A-C)(E+F)
+
+    for (int i = 0; i < k; i++) {
+        for (int j = 0; j < k; j++) {
+            Z11[i][j] = P5[i][j] + P4[i][j] - P2[i][j] + P6[i][j];
+            Z12[i][j] = P1[i][j] + P2[i][j];
+            Z21[i][j] = P3[i][j] + P4[i][j];
+            Z22[i][j] = P1[i][j] + P5[i][j] - P3[i][j] - P7[i][j];
         }
     }
 
-    Matrix M1 = strassen(add(A11, A22, newSize), add(B11, B22, newSize), newSize);
-    Matrix M2 = strassen(add(A21, A22, newSize), B11, newSize);
-    Matrix M3 = strassen(A11, subtract(B12, B22, newSize), newSize);
-    Matrix M4 = strassen(A22, subtract(B21, B11, newSize), newSize);
-    Matrix M5 = strassen(add(A11, A12, newSize), B22, newSize);
-    Matrix M6 = strassen(subtract(A21, A11, newSize), add(B11, B12, newSize), newSize);
-    Matrix M7 = strassen(subtract(A12, A22, newSize), add(B21, B22, newSize), newSize);
-
-    Matrix C(size, vector<int>(size));
-
-    // Combine the submatrices
-    for (int i = 0; i < newSize; i++) {
-        for (int j = 0; j < newSize; j++) {
-            C[i][j] = M1[i][j] + M4[i][j] - M5[i][j] + M7[i][j];
-            C[i][j + newSize] = M3[i][j] + M5[i][j];
-            C[i + newSize][j] = M2[i][j] + M4[i][j];
-            C[i + newSize][j + newSize] = M1[i][j] - M2[i][j] + M3[i][j] + M6[i][j];
+    vii Z(n, vector<int>(n));
+    for (int i = 0; i < k; i++) {
+        for (int j = 0; j < k; j++) {
+            Z[i][j] = Z11[i][j];
+            Z[i][j + k] = Z12[i][j];
+            Z[i + k][j] = Z21[i][j];
+            Z[i + k][j + k] = Z22[i][j];
         }
     }
 
-    return C;
-}
-
-// Main function with a menu to request and display data
-signed main() {
-    USM;
-
-    int n;
-    cin >> n;
-
-    Matrix A(n, vector<int>(n));
-    Matrix B(n, vector<int>(n));
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            cin >> A[i][j];
-        }
-    }
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            cin >> B[i][j];
-        }
-    }
-
-    // Capturamos el tiempo antes de la ejecucion del algoritmo
-    auto start = chrono::high_resolution_clock::now();
-
-    // Ejecucion del algoritmo de Strassen
-    Matrix C = strassen(A, B, n);
-
-    // Capturamos el tiempo despues de la ejecucion del algoritmo
-    auto end = chrono::high_resolution_clock::now();
-
-    // Calculamos la duracion de la ejecucion en microsegundos
-    chrono::duration<double, std::micro> duration = end - start;
-
-    // Imprimimos el tiempo de ejecucion en microsegundos
-    cout << fixed << setprecision(3);
-    cout << "Tiempo de ejecucion: " << duration.count() << " microsegundos" << endl;
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            cout << C[i][j] << " ";
-        }
-        cout << endl;
-    }
-
-    return 0;
+    return Z;
 }
