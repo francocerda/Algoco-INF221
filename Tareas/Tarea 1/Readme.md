@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este repositorio contiene los códigos desarrollados para la Tarea 1 del curso Algoco INF221.  
+Este repositorio contiene los códigos desarrollados para la Tarea 1 de INF221.  
 Alumno: Franco Cerda  
 Rol: 202204018-1  
 
