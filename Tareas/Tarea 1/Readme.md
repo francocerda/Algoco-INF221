@@ -6,7 +6,7 @@ Este repositorio contiene los códigos desarrollados para la Tarea 1 del curso A
 Alumno: Franco Cerda  
 Rol: 202204018-1  
 
-Los archivos principales se encuentran en la carpeta de Resumen. Estos poseen todos los algoritmos solicitados,  
+Los archivos principales se encuentran en la carpeta de Resumen. En esta se encuentran todos los algoritmos solicitados,  
 también poseen los tiempos de medición y la cantidad de inputs a recibir.  
 
 La otra carpeta presenta cada algoritmo por individual.
