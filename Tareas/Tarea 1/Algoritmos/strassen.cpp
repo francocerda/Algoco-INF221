@@ -29,7 +29,7 @@ void restar(vii& result, const vii& X, const vii& Y) {
 vii strassen(vii &X, vii &Y) {
     int n = X.size();
     if (n <= 64) { // Base case size, adjust based on profiling
-        vii Z(n, vector<int>(n, 0));
+        vii Z(n, vi(n, 0));
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 for (int k = 0; k < n; k++)
@@ -38,11 +38,11 @@ vii strassen(vii &X, vii &Y) {
     }
 
     int k = n / 2;
-    vii A(k, vector<int>(k)), B(k, vector<int>(k)), C(k, vector<int>(k)), D(k, vector<int>(k)),
-                        E(k, vector<int>(k)), F(k, vector<int>(k)), G(k, vector<int>(k)), H(k, vector<int>(k));
+    vii A(k, vi(k)), B(k, vi(k)), C(k, vi(k)), D(k, vi(k)),
+                        E(k, vi(k)), F(k, vi(k)), G(k, vi(k)), H(k, vi(k));
 
-    vii Z11(k, vector<int>(k)), Z12(k, vector<int>(k)), Z21(k, vector<int>(k)), Z22(k, vector<int>(k)),
-                        temp1(k, vector<int>(k)), temp2(k, vector<int>(k));
+    vii Z11(k, vi(k)), Z12(k, vi(k)), Z21(k, vi(k)), Z22(k, vi(k)),
+                        temp1(k, vi(k)), temp2(k, vi(k));
 
     for (int i = 0; i < k; i++)
         for (int j = 0; j < k; j++) {
@@ -92,7 +92,7 @@ vii strassen(vii &X, vii &Y) {
         }
     }
 
-    vii Z(n, vector<int>(n));
+    vii Z(n, vi(n));
     for (int i = 0; i < k; i++) {
         for (int j = 0; j < k; j++) {
             Z[i][j] = Z11[i][j];
