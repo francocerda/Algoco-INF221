@@ -1,20 +1,25 @@
-s = input()
-split_s = s.split()
+atributos = input().split()
 
-m = int(input())
+numero_canciones = int(input())
+lista_canciones = []
+for i in range(numero_canciones):
+    cancion = input().split()
+    lista_canciones.append(cancion)
 
-for i in range(m):
-    song = input()
-    list_song = []
-    list_song.insert(i,song)
-    m -= 1
+numero_ordenes = int(input())
+lista_ordenes = []
+for i in range(numero_ordenes):
+    orden = input()
+    lista_ordenes.append(orden)
 
-n = int(input())
-for i in range(n):
-    sort = input()
-    list_sort = []
-    list_sort.insert(i,sort)
-    n -= 1
+for orden in lista_ordenes:
+    indice = atributos.index(orden)
+    lista_canciones = sorted(lista_canciones, key=lambda cancion: cancion[indice])
+    
+    print(' '.join(atributos))
+    for cancion in lista_canciones:
+        print(' '.join(cancion))
+    print()
 
 
 
