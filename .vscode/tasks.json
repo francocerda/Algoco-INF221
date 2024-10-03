@@ -2,14 +2,23 @@
     "tasks": [
         {
             "type": "cppbuild",
+<<<<<<< HEAD
             "label": "C/C++: g++ build active file",
             "command": "/usr/bin/g++",
+=======
+            "label": "C/C++: gcc.exe build active file",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+>>>>>>> 712b24768e3ff3c5b3ef3bc16b407ffa04dc2db0
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
                 "-o",
+<<<<<<< HEAD
                 "${fileDirname}/${fileBasenameNoExtension}"
+=======
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+>>>>>>> 712b24768e3ff3c5b3ef3bc16b407ffa04dc2db0
             ],
             "options": {
                 "cwd": "${fileDirname}"
