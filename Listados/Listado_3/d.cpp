@@ -15,18 +15,18 @@ signed main() {
 
     string s; cin >> s;
     string t = s;
-    for(int i= t.size()-1;i>=1;i--){
-        if(s[i-1] > s[i]){
-            swap(s[i-1],s[i]);
-        }
-        if(t < s){
-            cout << s << endl;
+    sort(t.begin(),t.end());
+
+    do{
+        if(t > s && t[0] != '0'){
+            cout << t << endl;
             return 0;
         }
-    }
-   
+
+    } while(next_permutation(t.begin(),t.end()));
+        
     
-    
+    cout << 0 << endl;
     
     return 0;
 }
