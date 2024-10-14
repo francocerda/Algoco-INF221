@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define int int64_t
+#define int long long 
 #define vi vector<int>
 #define vii vector<vector<int>>
 #define pii pair<int,int>
@@ -19,7 +19,14 @@ signed main() {
         cin >> arr[i];
     }
     
-    
+    string s;
+    while(s != "0"){
+        cin >> s;
+        if(s == "0"){
+            break;
+        }
+        
+    }
     
     return 0;
 }

@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define int int64_t
+#define int long long 
 #define vi vector<int>
 #define vii vector<vector<int>>
 #define pii pair<int,int>
