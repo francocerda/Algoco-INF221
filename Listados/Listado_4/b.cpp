@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define int long long 
+#define int int64_t 
 #define vi vector<int>
 #define vii vector<vector<int>>
 #define pii pair<int,int>
@@ -13,13 +13,33 @@ using namespace std;
 signed main() {
     USM;
 
-    int n;cin>>n;
-    vi arr(n);
+    int n,m;cin >> n >> m;
+    vector<pair<int,int>> llegada;
     forn{
-        cin >> arr[i];
+        int a, b;cin >> a >> b;
+        llegada.push_back({a,b});
     }
+    sort(llegada.begin(),llegada.end());
+    int ahorro = 0;
+
+    multiset<int> t_total;
+
+
+    for(int i=0;i<n;i++){
+        int t_llegada = llegada[i].first;
+        int t_salida =  llegada[i].first+llegada[i].second;
+        auto it = t_total.lower_bound(t_llegada-m);
+        if(it != t_total.end() && *it <= t_llegada){
+            ahorro++;
+            t_total.erase(it);
+        }
+        t_total.insert(t_salida);
+    }
+
+
+    cout << ahorro << endl;
     
-    
+
     
     return 0;
 }

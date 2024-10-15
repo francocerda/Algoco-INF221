@@ -13,13 +13,30 @@ using namespace std;
 signed main() {
     USM;
 
-    int n;cin>>n;
-    vi arr(n);
+    int l, d, n; cin >> l >> d >>n;
+    vi pajaros(n);
     forn{
-        cin >> arr[i];
+        cin >> pajaros[i];
+    }
+    int total =0;
+    sort(pajaros.begin(),pajaros.end());
+    if(n==0){
+        total = (l - 12)/d + 1;
+        cout << total << endl;
+        return 0;
+    }else{
+        int pos_inicial = 6;
+
+        total += (pajaros[0]-6)/d;
+        for(int i=1;i<n;i++){
+            total += (pajaros[i]-pajaros[i-1] -d)/d;
+        }
+        total+= (l-6 -pajaros[n-1])/d;
+        
     }
     
     
+    cout  << total << endl;
     
     return 0;
 }

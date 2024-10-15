@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define int long long 
+#define int int64_t
 #define vi vector<int>
 #define vii vector<vector<int>>
 #define pii pair<int,int>
@@ -18,12 +18,8 @@ signed main() {
     forn{
         cin >> arr[i];
     }
-    sort(arr.rbegin(),arr.rend());
-    int suma =0;
-    for(int i=2;i<n;i+=3){
-        suma += arr[i];
-    }
     
-    cout << suma << endl;
+    
+    
     return 0;
 }
