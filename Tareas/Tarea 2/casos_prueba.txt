@@ -1,0 +1,92 @@
+Caso 1: Cadenas vacías
+S1: ''
+S2: ''
+
+Caso 2: Cadenas con caracteres repetidos
+S1: 'a'
+S2: ''
+
+Caso 3: Cadenas con caracteres repetidos
+S1: 'aa'
+S2: 'a'
+
+Caso 4: Cadenas con caracteres repetidos
+S1: 'aaa'
+S2: 'a'
+
+Caso 5: Cadenas con caracteres repetidos
+S1: 'aaaa'
+S2: 'aa'
+
+Caso 6: Cadenas con caracteres repetidos
+S1: 'aaaaa'
+S2: 'aa'
+
+Caso 7: Cadenas con caracteres repetidos
+S1: 'aaaaaa'
+S2: 'aaa'
+
+Caso 8: Cadenas con caracteres repetidos
+S1: 'aaaaaaa'
+S2: 'aaa'
+
+Caso 9: Cadenas con transposiciones necesarias
+S1: 'ab'
+S2: 'ba'
+
+Caso 10: Cadenas con transposiciones necesarias
+S1: 'abc'
+S2: 'bac'
+
+Caso 11: Cadenas con transposiciones necesarias
+S1: 'abcd'
+S2: 'badc'
+
+Caso 12: Inserciones y eliminaciones
+S1: 'hello'
+S2: 'he'
+
+Caso 13: Inserciones y eliminaciones
+S1: 'testing'
+S2: 'test'
+
+Caso 14: Inserciones y eliminaciones
+S1: 'example'
+S2: 'ex'
+
+Caso 15: Cadenas aleatorias de longitudes 2 y 2
+S1: 'fk'
+S2: 'at'
+
+Caso 16: Cadenas aleatorias de longitudes 3 y 3
+S1: 'tui'
+S2: 'rkx'
+
+Caso 17: Cadenas aleatorias de longitudes 4 y 4
+S1: 'lovz'
+S2: 'toua'
+
+Caso 18: Cadenas aleatorias de longitudes 5 y 5
+S1: 'oqnxh'
+S2: 'oibde'
+
+Caso 19: Cadenas aleatorias de longitudes 6 y 6
+S1: 'xkzaks'
+S2: 'ketzmk'
+
+Caso 20: Cadenas largas para DP de longitudes 8 y 8
+S1: 'zgdzwvgl'
+S2: 'metchbuz'
+
+Caso 21: Cadenas largas para DP de longitudes 10 y 10
+S1: 'fcqajvzzgy'
+S2: 'yinqtahxri'
+
+Caso 22: Cadenas largas para DP de longitudes 12 y 12
+S1: 'dtzptkuiamcx'
+S2: 'oyogafbnfjgx'
+
+Caso 23: Cadenas largas para DP de longitudes 15 y 15
+S1: 'vsplqtuvxkfmsnk'
+S2: 'aopcjoyqguhobbq'
+

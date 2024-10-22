@@ -1,0 +1,47 @@
+Caso,Algoritmo,Distancia,Tiempo(ns),Tamaño
+Caso 1,Fuerza Bruta,0,300,0
+Caso 1,Programación Dinámica,0,3200,0
+Caso 2,Fuerza Bruta,1,100,1
+Caso 2,Programación Dinámica,1,1400,1
+Caso 3,Fuerza Bruta,1,600,3
+Caso 3,Programación Dinámica,1,1400,3
+Caso 4,Fuerza Bruta,2,400,4
+Caso 4,Programación Dinámica,2,1500,4
+Caso 5,Fuerza Bruta,2,2600,6
+Caso 5,Programación Dinámica,2,2600,6
+Caso 6,Fuerza Bruta,3,3200,7
+Caso 6,Programación Dinámica,3,1900,7
+Caso 7,Fuerza Bruta,3,15500,9
+Caso 7,Programación Dinámica,3,3600,9
+Caso 8,Fuerza Bruta,4,29600,10
+Caso 8,Programación Dinámica,4,3200,10
+Caso 9,Fuerza Bruta,1,700,4
+Caso 9,Programación Dinámica,1,3000,4
+Caso 10,Fuerza Bruta,1,2600,6
+Caso 10,Programación Dinámica,1,1600,6
+Caso 11,Fuerza Bruta,2,12500,8
+Caso 11,Programación Dinámica,2,2100,8
+Caso 12,Fuerza Bruta,3,2700,7
+Caso 12,Programación Dinámica,3,1600,7
+Caso 13,Fuerza Bruta,3,76900,11
+Caso 13,Programación Dinámica,3,2700,11
+Caso 14,Fuerza Bruta,5,4600,9
+Caso 14,Programación Dinámica,5,1800,9
+Caso 15,Fuerza Bruta,4,600,4
+Caso 15,Programación Dinámica,4,1000,4
+Caso 16,Fuerza Bruta,6,2700,6
+Caso 16,Programación Dinámica,6,1300,6
+Caso 17,Fuerza Bruta,6,11800,8
+Caso 17,Programación Dinámica,6,1800,8
+Caso 18,Fuerza Bruta,8,59000,10
+Caso 18,Programación Dinámica,8,2600,10
+Caso 19,Fuerza Bruta,6,311100,12
+Caso 19,Programación Dinámica,6,5000,12
+Caso 20,Fuerza Bruta,No ejecutado,Cadenas demasiado largas,16
+Caso 20,Programación Dinámica,14,11200,16
+Caso 21,Fuerza Bruta,No ejecutado,Cadenas demasiado largas,20
+Caso 21,Programación Dinámica,16,13000,20
+Caso 22,Fuerza Bruta,No ejecutado,Cadenas demasiado largas,24
+Caso 22,Programación Dinámica,20,15100,24
+Caso 23,Fuerza Bruta,No ejecutado,Cadenas demasiado largas,30
+Caso 23,Programación Dinámica,24,30800,30
