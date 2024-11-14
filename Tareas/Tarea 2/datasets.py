@@ -9,7 +9,7 @@ def generar_cadena_aleatoria(longitud):
 def escribir_datasets_en_txt(filename):
     with open(filename, 'w') as f:
         # Caso 1: Cadenas vacías
-        f.write("Caso 1: Cadenas vacías\n")
+        f.write("Caso 1: Cadenas vacias\n")
         f.write(f"S1: ''\nS2: ''\n\n")
         
         # Casos para Cadenas con caracteres repetidos (Caso 2)
@@ -44,7 +44,7 @@ def escribir_datasets_en_txt(filename):
             caso_numero += 1
 
         # Casos más largos para programación dinámica (no se ejecutará fuerza bruta)
-        tamanos_dp = [ (8, 8), (10, 10), (12, 12), (15, 15) ]
+        tamanos_dp = [ (8, 8), (10, 10), (12, 12), (15, 15), (20, 20), (30, 30), (50, 50),(75,75),(100,100) ,(150,150),(200,200)]  # Aumenta tamaños para DP
         for longitud_s1, longitud_s2 in tamanos_dp:
             cadena1 = generar_cadena_aleatoria(longitud_s1)
             cadena2 = generar_cadena_aleatoria(longitud_s2)

@@ -1,4 +1,4 @@
-Caso 1: Cadenas vacías
+Caso 1: Cadenas vacias
 S1: ''
 S2: ''
 
@@ -55,38 +55,66 @@ S1: 'example'
 S2: 'ex'
 
 Caso 15: Cadenas aleatorias de longitudes 2 y 2
-S1: 'fk'
-S2: 'at'
+S1: 'rw'
+S2: 'wv'
 
 Caso 16: Cadenas aleatorias de longitudes 3 y 3
-S1: 'tui'
-S2: 'rkx'
+S1: 'wpv'
+S2: 'rmw'
 
 Caso 17: Cadenas aleatorias de longitudes 4 y 4
-S1: 'lovz'
-S2: 'toua'
+S1: 'oxin'
+S2: 'pqmq'
 
 Caso 18: Cadenas aleatorias de longitudes 5 y 5
-S1: 'oqnxh'
-S2: 'oibde'
+S1: 'rhvyj'
+S2: 'osmdj'
 
 Caso 19: Cadenas aleatorias de longitudes 6 y 6
-S1: 'xkzaks'
-S2: 'ketzmk'
+S1: 'tbuozf'
+S2: 'rywzol'
 
 Caso 20: Cadenas largas para DP de longitudes 8 y 8
-S1: 'zgdzwvgl'
-S2: 'metchbuz'
+S1: 'ldculbdq'
+S2: 'lcvypvtd'
 
 Caso 21: Cadenas largas para DP de longitudes 10 y 10
-S1: 'fcqajvzzgy'
-S2: 'yinqtahxri'
+S1: 'tetdqtedtt'
+S2: 'kdtfpgzgdp'
 
 Caso 22: Cadenas largas para DP de longitudes 12 y 12
-S1: 'dtzptkuiamcx'
-S2: 'oyogafbnfjgx'
+S1: 'pypsogklieli'
+S2: 'hhyilkuhktlk'
 
 Caso 23: Cadenas largas para DP de longitudes 15 y 15
-S1: 'vsplqtuvxkfmsnk'
-S2: 'aopcjoyqguhobbq'
+S1: 'ybamiunfklgenvq'
+S2: 'gdotzueidbgrxya'
+
+Caso 24: Cadenas largas para DP de longitudes 20 y 20
+S1: 'bgniufxdhxwofvoncpjk'
+S2: 'aukcgmeijohrsuiqisyk'
+
+Caso 25: Cadenas largas para DP de longitudes 30 y 30
+S1: 'kemljutjknmqsjlfhcniwgtjhcxidb'
+S2: 'ojzehciqnnxtxmupnlpmtjehwyjfnl'
+
+Caso 26: Cadenas largas para DP de longitudes 50 y 50
+S1: 'obogetvrrvqnqzbntbqjuzpoglebtmwraptayjbwqvtekaiydh'
+S2: 'bimmlbakmoimbblynomhxvcqszfshipgmuzevubdvojkyjsihz'
+
+Caso 27: Cadenas largas para DP de longitudes 75 y 75
+S1: 'vjkqgoocnjxqvrzpqtlzbboxcaooixhclkqglxvyyfsgtxlypaivqrnfnllkoptkadupxrevxfb'
+S2: 'kfzkfvhutbjybvfpitxxnvuklhcdmwqgfghbejykrhalazkzscabjbnvuexqqsqewnwstknnyiq'
+
+Caso 28: Cadenas largas para DP de longitudes 100 y 100
+S1: 'grjxlhojyszyxxpqigltodikmthzgqvwljocwrjglyfnpjinvrahfbxtmhdcyhmpglqdhmxrihmujcdzqxjjehytswtjqvyawtwj'
+S2: 'pbtyovvawkukhlqbgtkndkrlvdblycvxejmkjgnyhngryxfqwlsajcclntelpxgmqebyxonelgmscdyfmkoeuwqzfnvxxrskziqa'
+
+Caso 29: Cadenas largas para DP de longitudes 150 y 150
+S1: 'gcqejzajyairomgmikpamtbbukpelufiltvfipfcvdqvpvbjnfxukqbyilhifpwyumhagvxmaiakkwvzddzysxuzvdwyrmghuawnjzejofqxtgdodumomwxdtutnmwhwobueersqzigttsrqxlpzrl'
+S2: 'qsehtgzbyvsrxwcagfxcxvumjxnoebkpiqiywfogzrparrkqjvsfblzkjqixsjpetajpavdrhcjksmnxzwlmpkflqssdjyudrefmtzockadvycjhyipcqivlitkybrrlcciqbjhncxdaxutyuhswrg'
+
+Caso 30: Cadenas largas para DP de longitudes 200 y 200
+S1: 'nveyueicdudzwgaamevoywdwygprhpfkgklbwfkxbgssxcicrylfopuexennagzbfhbfipldbvlipmtuxtthufzjoplpvczuztbdctyzuodbelegcsrbueknutzxherzcthdpdzsspmcenpjltommtrsavayeqvtapaimjpnwytcuedvpkwpdbskdqydqcpadebeflqz'
+S2: 'ghrximzoqpcwbiczzlsaatmbbflhpyczpfmlrgnyqslwnyslyytzeettfxgatrfmlueofqwxxjezzluezrcetpdfvrpqijodvseflzijenqlzvfrxgmxrgndwxmdcvmieenhvvrwpdxxwchgfkgrrocudomdkczovvbieohotxytdaywscqvejdfqxpwmhrwjyshqoyx'
 
