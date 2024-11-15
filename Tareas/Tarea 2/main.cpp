@@ -89,10 +89,22 @@ int costo_trans(char a, char b) {
 }
 
 // Algoritmo de fuerza bruta
-
 int fuerza_bruta(string s1, string s2, int i, int j) {
-    if (i == s1.size()) return (s2.size() - j) * costo_ins(s2[j]);
-    if (j == s2.size()) return (s1.size() - i) * costo_del(s1[i]);
+    int costo_base = 0;
+    if (i == s1.size()){
+        for(int j=0;j<s2.size();j++){
+            costo_base += costo_ins(s2[j]);
+        }
+        return costo_base;
+    }
+
+
+    if (j == s2.size()){
+        for(int i=0;i<s1.size();i++){
+            costo_base += costo_del(s1[i]);
+        }
+        return costo_base;
+    }
 
     int costo = costo_sub(s1[i], s2[j]) + fuerza_bruta(s1, s2, i + 1, j + 1);
     costo = min(costo, costo_ins(s2[j]) + fuerza_bruta(s1, s2, i, j + 1));
@@ -104,8 +116,7 @@ int fuerza_bruta(string s1, string s2, int i, int j) {
     return costo;
 }
 
-// Algoritmo de programación dinámica
-
+// Algoritmo de dp
 int programacion_dimanica(const string &s1,const string &s2){
 
     int n = s1.size();
@@ -132,7 +143,7 @@ int programacion_dimanica(const string &s1,const string &s2){
             }
         }
     }
-
+ 
     return dp[n][m];
 }
 
@@ -204,13 +215,14 @@ void leer_casos_prueba(string filename) {
 }
 
 signed main() {
+
     // Cargar costos desde archivos de texto
     cargar_costos_insercion("cost_insert.txt");
     cargar_costos_eliminacion("cost_delete.txt");
     cargar_costos_sustitucion("cost_replace.txt");
     cargar_costos_transposicion("cost_transpose.txt");
 
-    // Leer y procesar casos de prueba
+    // Leer casos de prueba
     leer_casos_prueba("casos_prueba.txt");
 
     return 0;
